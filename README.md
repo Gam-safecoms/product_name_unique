@@ -1,7 +1,7 @@
 Unique Product Name
 
 Usage-->
-* To make unable to save new product if the product name is same as other existing product names.
+* To make unable to save new product if the product name is the same as other existing product names.
 * Download repository and add to addons directory under odoo-server directory. After that restart the odoo-server.
 * Then install.
 
