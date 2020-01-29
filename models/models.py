@@ -6,7 +6,6 @@ from odoo.exceptions import ValidationError
 from odoo import models
 import logging
 
-_logger = logging.getLogger(__name__)
 
 class ProductProduct(models.Model):
 	_inherit = 'product.product'
@@ -18,14 +17,18 @@ class ProductProduct(models.Model):
 		matching_products = self.env['product.product'].search([('name','=',products.name)])
 		if len(matching_products)>1:
 			raise ValidationError(_('Product name must be unique!'))
+<<<<<<< HEAD
 		self.clear_caches()
 		return products
+=======
+>>>>>>> fc6b611fe30a1fe0382b0672e458981ec9fcfce9
 
 class ProductTemplate(models.Model):
 	_inherit = 'product.template'
 
 	def write(self,vals):
 		res = super(ProductTemplate, self).write(vals)
+<<<<<<< HEAD
 		if "name" in vals :			
 			matching_products = self.env['product.product'].search([('name','=',vals['name'])])
 			print(matching_products)
@@ -46,4 +49,11 @@ class ProductTemplate(models.Model):
 				])
 		return res
 					
+=======
+		matching_products = self.env['product.product'].search([('name','=',vals['name'])])
+		print(matching_products)
+		if len(matching_products) > 1:
+			raise ValidationError(_('Product name must be unique!'))
+
+>>>>>>> fc6b611fe30a1fe0382b0672e458981ec9fcfce9
 
